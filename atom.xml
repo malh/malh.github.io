@@ -3,7 +3,7 @@
   <title><![CDATA[malh.github.io]]></title>
   <link href="http://malh.github.io/atom.xml" rel="self"/>
   <link href="http://malh.github.io/"/>
-  <updated>2013-08-21T17:17:10+10:00</updated>
+  <updated>2013-08-21T17:27:00+10:00</updated>
   <id>http://malh.github.io/</id>
   <author>
     <name><![CDATA[Mal Hamdan]]></name>
@@ -11,5 +11,19 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Hello World]]></title>
+    <link href="http://malh.github.io/blog/2013/08/21/hello-world/"/>
+    <updated>2013-08-21T17:23:00+10:00</updated>
+    <id>http://malh.github.io/blog/2013/08/21/hello-world</id>
+    <content type="html"><![CDATA[<p>Hi, this is my first post. Please be gentle.</p>
+
+<ol type="a">
+<li></li>
+</ol>
+
+]]></content>
+  </entry>
   
 </feed>
