@@ -4,7 +4,7 @@
   <title><![CDATA[malh.github.io]]></title>
   <link href="http://malh.github.io/atom.xml" rel="self"/>
   <link href="http://malh.github.io/"/>
-  <updated>2013-08-21T21:18:49+10:00</updated>
+  <updated>2013-08-21T21:19:59+10:00</updated>
   <id>http://malh.github.io/</id>
   <author>
     <name><![CDATA[Mal Hamdan]]></name>
@@ -48,20 +48,6 @@
 </span><span class='line'>cpio: Existing "/var/tmp/test/foo3" same age or newer
 </span><span class='line'>0 blocks
 </span><span class='line'>3 error(s)</span></code></pre></td></tr></table></div></figure>
-
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Hello World]]></title>
-    <link href="http://malh.github.io/blog/2013/08/21/hello-world/"/>
-    <updated>2013-08-21T17:23:00+10:00</updated>
-    <id>http://malh.github.io/blog/2013/08/21/hello-world</id>
-    <content type="html"><![CDATA[<p>Hi, this is my first post. Please be gentle.</p>
-
-<ol type="a">
-<li></li>
-</ol>
 
 ]]></content>
   </entry>
