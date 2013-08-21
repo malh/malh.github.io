@@ -9,7 +9,7 @@
   <meta name="author" content="Mal Hamdan">
 
   
-  <meta name="description" content="Hi, this is my first post. Please be gentle. ">
+  <meta name="description" content="Using file and cpio to copy directories is an easy and fast way to duplicate directories of files while maintaining permissions and ensuring that &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -80,6 +80,74 @@
   <header>
     
       <!-- Now we're back to normal posts. Note the links used under href in both headers.-->
+        <h1 class="entry-title"><a href="/blog/2013/08/21/copy-directory-structure-between-filesystems/">Copy Directory Structure Between Filesystems</a></h1>
+      
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-08-21T21:11:00+10:00" pubdate data-updated="true">Aug 21<span>st</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Using file and cpio to copy directories is an easy and fast way to duplicate directories of files while maintaining permissions and ensuring that symblic links are also copied.</p>
+
+<p>First, go to the directory you want to copy then execute find . | cpio -pdm (you can also use the v option in cpio if you would like the copy to be verbose).</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ find . | cpio -vpdm /var/tmp/test
+</span><span class='line'>/var/tmp/test/.
+</span><span class='line'>/var/tmp/test/foo1
+</span><span class='line'>/var/tmp/test/foo2
+</span><span class='line'>/var/tmp/test/foo3
+</span><span class='line'>48 blocks
+</span><span class='line'>
+</span><span class='line'>$ find . | cpio -pdm /var/tmp/test
+</span><span class='line'>cpio: Existing "/var/tmp/test/foo1" same age or newer
+</span><span class='line'>cpio: Existing "/var/tmp/test/foo2" same age or newer
+</span><span class='line'>cpio: Existing "/var/tmp/test/foo3" same age or newer
+</span><span class='line'>0 blocks
+</span><span class='line'>3 error(s)</span></code></pre></td></tr></table></div></figure>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <!-- Now we're back to normal posts. Note the links used under href in both headers.-->
         <h1 class="entry-title"><a href="/blog/2013/08/21/hello-world/">Hello World</a></h1>
       
     
@@ -128,6 +196,10 @@
     <section>
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2013/08/21/copy-directory-structure-between-filesystems/">Copy Directory Structure Between Filesystems</a>
+      </li>
     
       <li class="post">
         <a href="/blog/2013/08/21/hello-world/">Hello World</a>
