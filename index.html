@@ -104,7 +104,7 @@
   </header>
 
 
-  <div class="entry-content"><p>There are instances where you need to create a file that is a number of minutes in the past from current time. There may be other ways to do this, however below is the only solution I have found that works across Solaris and RHEL/CentOS.</p>
+  <div class="entry-content"><p>There are instances where you need to create a file that is a number of minutes in the past from current time. There may be other ways to do this, however below is a only solution I have found that works well across both Solaris and RHEL/CentOS.</p>
 
 <p>Example:</p>
 
@@ -115,7 +115,7 @@
 <span class='line-number'>5</span>
 </pre></td><td class='code'><pre><code class=''><span class='line'>^-^ mal@foo ~ $ TZ=TIMENOW0 touch -t $(TZ=TIMNOW0:30 date +%m%d%H%M.%S) /tmp/foo.txt
 </span><span class='line'>^-^ mal@foo ~ $ ls -ld /tmp/foo.txt 
-</span><span class='line'>-rw-r--r--  1 Mal  wheel  0 Aug 21 21:08 /tmp/foo.txt
+</span><span class='line'>-rw-r--r--  1 mal  wheel  0 Aug 21 21:08 /tmp/foo.txt
 </span><span class='line'>^-^ mal@foo ~ $ date
 </span><span class='line'>Wed Aug 21 21:38:57 EST 2013</span></code></pre></td></tr></table></div></figure>
 
