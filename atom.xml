@@ -4,7 +4,7 @@
   <title><![CDATA[malh.github.io]]></title>
   <link href="http://malh.github.io/atom.xml" rel="self"/>
   <link href="http://malh.github.io/"/>
-  <updated>2013-08-21T21:55:05+10:00</updated>
+  <updated>2013-08-21T22:00:38+10:00</updated>
   <id>http://malh.github.io/</id>
   <author>
     <name><![CDATA[Mal Hamdan]]></name>
@@ -18,7 +18,7 @@
     <link href="http://malh.github.io/blog/2013/08/21/create-file-with-a-timestamp-in-the-past/"/>
     <updated>2013-08-21T21:42:00+10:00</updated>
     <id>http://malh.github.io/blog/2013/08/21/create-file-with-a-timestamp-in-the-past</id>
-    <content type="html"><![CDATA[<p>There may be instances where you need to create a file that is a number of minutes in the past from current time.</p>
+    <content type="html"><![CDATA[<p>There are instances where you need to create a file that is a number of minutes in the past from current time. There may be other ways to do this, however below is the only solution I have found that works across Solaris and RHEL/CentOS.</p>
 
 <p>Example:</p>
 
