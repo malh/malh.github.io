@@ -9,7 +9,12 @@
   <meta name="author" content="Mal Hamdan">
 
   
-  <meta name="description" content="Using file and cpio to copy directories is an easy and fast way to duplicate directories of files while maintaining permissions and ensuring that &hellip;">
+  <meta name="description" content="There may be instances where you need to create a file that is a number of minutes in the past from current time. Example: 1
+2
+3
+4
+5
+^-^ mal@foo ~ $ &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -73,6 +78,58 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <!-- Now we're back to normal posts. Note the links used under href in both headers.-->
+        <h1 class="entry-title"><a href="/blog/2013/08/21/create-file-with-a-timestamp-in-the-past/">Create File With a Timestamp in the Past</a></h1>
+      
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-08-21T21:42:00+10:00" pubdate data-updated="true">Aug 21<span>st</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>There may be instances where you need to create a file that is a number of minutes in the past from current time.</p>
+
+<p>Example:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>^-^ mal@foo ~ $ TZ=TIMENOW0 touch -t $(TZ=TIMNOW0:30 date +%m%d%H%M.%S) /tmp/foo.txt
+</span><span class='line'>^-^ mal@foo ~ $ ls -ld /tmp/foo.txt 
+</span><span class='line'>-rw-r--r--  1 Mal  wheel  0 Aug 21 21:08 /tmp/foo.txt
+</span><span class='line'>^-^ mal@foo ~ $ date
+</span><span class='line'>Wed Aug 21 21:38:57 EST 2013</span></code></pre></td></tr></table></div></figure>
+
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -153,6 +210,10 @@
     <section>
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2013/08/21/create-file-with-a-timestamp-in-the-past/">Create File With a Timestamp in the Past</a>
+      </li>
     
       <li class="post">
         <a href="/blog/2013/08/21/copy-directory-structure-between-filesystems/">Copy Directory Structure Between Filesystems</a>

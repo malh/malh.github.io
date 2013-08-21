@@ -4,7 +4,7 @@
   <title><![CDATA[malh.github.io]]></title>
   <link href="http://malh.github.io/atom.xml" rel="self"/>
   <link href="http://malh.github.io/"/>
-  <updated>2013-08-21T21:21:30+10:00</updated>
+  <updated>2013-08-21T21:55:05+10:00</updated>
   <id>http://malh.github.io/</id>
   <author>
     <name><![CDATA[Mal Hamdan]]></name>
@@ -12,6 +12,29 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Create file with a timestamp in the past]]></title>
+    <link href="http://malh.github.io/blog/2013/08/21/create-file-with-a-timestamp-in-the-past/"/>
+    <updated>2013-08-21T21:42:00+10:00</updated>
+    <id>http://malh.github.io/blog/2013/08/21/create-file-with-a-timestamp-in-the-past</id>
+    <content type="html"><![CDATA[<p>There may be instances where you need to create a file that is a number of minutes in the past from current time.</p>
+
+<p>Example:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>^-^ mal@foo ~ $ TZ=TIMENOW0 touch -t $(TZ=TIMNOW0:30 date +%m%d%H%M.%S) /tmp/foo.txt
+</span><span class='line'>^-^ mal@foo ~ $ ls -ld /tmp/foo.txt 
+</span><span class='line'>-rw-r--r--  1 Mal  wheel  0 Aug 21 21:08 /tmp/foo.txt
+</span><span class='line'>^-^ mal@foo ~ $ date
+</span><span class='line'>Wed Aug 21 21:38:57 EST 2013</span></code></pre></td></tr></table></div></figure>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Copy directory structure between filesystems]]></title>

@@ -5,11 +5,16 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Copy directory structure between filesystems - malh.github.io</title>
+  <title>Create file with a timestamp in the past - malh.github.io</title>
   <meta name="author" content="Mal Hamdan">
 
   
-  <meta name="description" content="Using file and cpio to copy directories is an easy and fast way to duplicate directories of files while maintaining permissions and ensuring that &hellip;">
+  <meta name="description" content="There may be instances where you need to create a file that is a number of minutes in the past from current time. Example: 1
+2
+3
+4
+5
+^-^ mal@foo ~ $ &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +23,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://malh.github.io/blog/2013/08/21/copy-directory-structure-between-filesystems/">
+  <link rel="canonical" href="http://malh.github.io/blog/2013/08/21/create-file-with-a-timestamp-in-the-past/">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -77,7 +82,7 @@
   <header>
     
       
-        <h1 class="entry-title">Copy Directory Structure Between Filesystems</h1>
+        <h1 class="entry-title">Create File With a Timestamp in the Past</h1>
       
     
     
@@ -94,43 +99,27 @@
   
 
 
-<time datetime="2013-08-21T21:11:00+10:00" pubdate data-updated="true">Aug 21<span>st</span>, 2013</time>
+<time datetime="2013-08-21T21:42:00+10:00" pubdate data-updated="true">Aug 21<span>st</span>, 2013</time>
         
       </p>
     
   </header>
 
 
-<div class="entry-content"><p>Using file and cpio to copy directories is an easy and fast way to duplicate directories of files while maintaining permissions and ensuring that symblic links are also copied.</p>
+<div class="entry-content"><p>There may be instances where you need to create a file that is a number of minutes in the past from current time.</p>
 
-<p>First, go to the directory you want to copy then execute find . | cpio -pdm (you can also use the v option in cpio if you would like the copy to be verbose).</p>
+<p>Example:</p>
 
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
 <span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'># find . | cpio -vpdm /var/tmp/test
-</span><span class='line'>/var/tmp/test/.
-</span><span class='line'>/var/tmp/test/foo1
-</span><span class='line'>/var/tmp/test/foo2
-</span><span class='line'>/var/tmp/test/foo3
-</span><span class='line'>48 blocks
-</span><span class='line'>
-</span><span class='line'># find . | cpio -pdm /var/tmp/test
-</span><span class='line'>cpio: Existing "/var/tmp/test/foo1" same age or newer
-</span><span class='line'>cpio: Existing "/var/tmp/test/foo2" same age or newer
-</span><span class='line'>cpio: Existing "/var/tmp/test/foo3" same age or newer
-</span><span class='line'>0 blocks
-</span><span class='line'>3 error(s)</span></code></pre></td></tr></table></div></figure>
+</pre></td><td class='code'><pre><code class=''><span class='line'>^-^ mal@foo ~ $ TZ=TIMENOW0 touch -t $(TZ=TIMNOW0:30 date +%m%d%H%M.%S) /tmp/foo.txt
+</span><span class='line'>^-^ mal@foo ~ $ ls -ld /tmp/foo.txt 
+</span><span class='line'>-rw-r--r--  1 Mal  wheel  0 Aug 21 21:08 /tmp/foo.txt
+</span><span class='line'>^-^ mal@foo ~ $ date
+</span><span class='line'>Wed Aug 21 21:38:57 EST 2013</span></code></pre></td></tr></table></div></figure>
 
 </div>
 
@@ -154,7 +143,7 @@
   
 
 
-<time datetime="2013-08-21T21:11:00+10:00" pubdate data-updated="true">Aug 21<span>st</span>, 2013</time>
+<time datetime="2013-08-21T21:42:00+10:00" pubdate data-updated="true">Aug 21<span>st</span>, 2013</time>
       
 
 
@@ -162,7 +151,7 @@
     
       <div class="sharing">
   
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://malh.github.io/blog/2013/08/21/copy-directory-structure-between-filesystems/" data-via="mal_h" data-counturl="http://malh.github.io/blog/2013/08/21/copy-directory-structure-between-filesystems/" >Tweet</a>
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://malh.github.io/blog/2013/08/21/create-file-with-a-timestamp-in-the-past/" data-via="mal_h" data-counturl="http://malh.github.io/blog/2013/08/21/create-file-with-a-timestamp-in-the-past/" >Tweet</a>
   
   
   
@@ -171,8 +160,8 @@
     
     <p class="meta">
       
+        <a class="basic-alignment left articlenav" href="/blog/2013/08/21/copy-directory-structure-between-filesystems/" title="Previous Post: Copy directory structure between filesystems">&laquo; Copy directory structure between filesystems</a>
       
-        <a class="basic-alignment right articlenav" href="/blog/2013/08/21/create-file-with-a-timestamp-in-the-past/" title="Next Post: Create file with a timestamp in the past">Create file with a timestamp in the past &raquo;</a>
       
     </p>
   </footer>
