@@ -118,14 +118,14 @@
 <span class='line-number'>11</span>
 <span class='line-number'>12</span>
 <span class='line-number'>13</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>$ find . | cpio -vpdm /var/tmp/test
+</pre></td><td class='code'><pre><code class=''><span class='line'># find . | cpio -vpdm /var/tmp/test
 </span><span class='line'>/var/tmp/test/.
 </span><span class='line'>/var/tmp/test/foo1
 </span><span class='line'>/var/tmp/test/foo2
 </span><span class='line'>/var/tmp/test/foo3
 </span><span class='line'>48 blocks
 </span><span class='line'>
-</span><span class='line'>$ find . | cpio -pdm /var/tmp/test
+</span><span class='line'># find . | cpio -pdm /var/tmp/test
 </span><span class='line'>cpio: Existing "/var/tmp/test/foo1" same age or newer
 </span><span class='line'>cpio: Existing "/var/tmp/test/foo2" same age or newer
 </span><span class='line'>cpio: Existing "/var/tmp/test/foo3" same age or newer
