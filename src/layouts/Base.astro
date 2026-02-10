@@ -4,9 +4,10 @@ import "../styles/global.css";
 interface Props {
   title: string;
   description?: string;
+  activeNav?: string;
 }
 
-const { title, description = "Mal Hamdan's personal site" } = Astro.props;
+const { title, description = "A small notebook of drafts, notes, and experiments", activeNav } = Astro.props;
 ---
 
 <!doctype html>
@@ -15,72 +16,72 @@ const { title, description = "Mal Hamdan's personal site" } = Astro.props;
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content={description} />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
     <link rel="sitemap" href="/sitemap-index.xml" />
+    <link rel="alternate" type="application/rss+xml" title="thinking machines" href="/rss.xml" />
     <title>{title}</title>
   </head>
   <body>
-    <header>
-      <nav>
-        <a href="/" class="site-title">malh</a>
-        <div class="nav-links">
-          <a href="/blog">Blog</a>
-          <a href="/about">About</a>
+    <div class="mx-auto max-w-[720px] px-8">
+      <header class="border-b border-border pt-32 pb-20">
+        <div class="font-serif text-[2rem] font-normal italic text-text-primary tracking-[-0.03em] mb-4">
+          <a href="/" class="text-inherit no-underline hover:no-underline">thinking machines</a>
         </div>
+        <div class="text-text-dim text-[0.75rem] font-light uppercase tracking-[0.15em]">
+          a small notebook of drafts, notes, and experiments
+        </div>
+      </header>
+
+      <nav class="border-b border-border py-4">
+        <ul class="flex gap-8 list-none">
+          <li><a href="/" class:list={["nav-link", { active: activeNav === "writing" }]}>writing</a></li>
+          <li><a href="/about" class:list={["nav-link", { active: activeNav === "about" }]}>about</a></li>
+        </ul>
       </nav>
-    </header>
-    <main>
-      <slot />
-    </main>
-    <footer>
-      <p>&copy; {new Date().getFullYear()} Mal Hamdan</p>
-    </footer>
+
+      <main class="pt-20 pb-32 animate-[fadeIn_0.4s_ease-out]">
+        <slot />
+      </main>
+
+      <footer class="border-t border-border py-10 pb-32">
+        <div class="flex justify-between items-baseline text-[0.6875rem] text-text-dim font-light">
+          <span>&copy; {new Date().getFullYear()}</span>
+          <div class="flex gap-8">
+            <a href="/rss.xml" class="text-text-dim no-underline hover:text-text-muted transition-colors duration-200">rss</a>
+            <a href="https://github.com/malh" class="text-text-dim no-underline hover:text-text-muted transition-colors duration-200">github</a>
+          </div>
+        </div>
+      </footer>
+    </div>
   </body>
 </html>
 
 <style>
-  header {
-    border-bottom: 1px solid var(--color-border);
-  }
-
-  nav {
-    max-width: var(--max-width);
-    margin: 0 auto;
-    padding: 1rem 1.5rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  .site-title {
-    font-weight: 700;
-    font-size: 1.25rem;
-    color: var(--color-text);
-  }
-
-  .site-title:hover {
-    text-decoration: none;
-  }
-
-  .nav-links {
-    display: flex;
-    gap: 1.5rem;
-  }
-
-  .nav-links a {
+  .nav-link {
     color: var(--color-text-muted);
-    font-size: 0.95rem;
-  }
-
-  .nav-links a:hover {
-    color: var(--color-text);
     text-decoration: none;
+    font-size: 0.75rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    transition: color 0.2s ease;
+    position: relative;
   }
 
-  footer {
-    border-top: 1px solid var(--color-border);
-    text-align: center;
-    padding: 1.5rem;
-    color: var(--color-text-muted);
-    font-size: 0.85rem;
+  .nav-link:hover,
+  .nav-link.active {
+    color: var(--color-text-primary);
+  }
+
+  .nav-link.active::after {
+    content: "";
+    position: absolute;
+    bottom: -1.05rem;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: var(--color-accent);
   }
 </style>
